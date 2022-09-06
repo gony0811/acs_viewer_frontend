@@ -23,11 +23,28 @@ const state = {
         },
         {
           title: 'Alarm Spec',
-          icon: 'mdi-alert',
+          icon: 'mdi-pencil-box-outline',
           to: '/alarm/alarm-spec'
         }
       ]
+    },
+    {
+      title: 'Resources',
+      icon: 'mdi-vector-square',
+      items: [
+        {
+          title: 'Node',
+          icon: 'mdi-vector-point',
+          to: '/resources/node'
+        },
+        {
+          title: 'Link',
+          icon: 'mdi-vector-line',
+          to: '/resources/link'
+        }
+      ]
     }
+
     /*
     {
       title: 'User Profile',

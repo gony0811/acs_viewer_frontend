@@ -7,7 +7,7 @@
     <material-card
       icon="mdi-clipboard-text"
       icon-small
-      title="Current Alarm"
+      title="Node"
       color="accent"
     >
       <v-data-table
@@ -15,11 +15,12 @@
         :headers="headers"
         :items="items"
         :items-per-page="10"
+
         class="elevation-1"
       />
     </material-card>
 
-    <div class="py-3"/>
+    <div class="py-3" />
   </v-container>
 </template>
 <script>
@@ -30,24 +31,20 @@
       return {
         headers: [
           { text: 'ID', value: 'id' },
-          { text: 'Alarm Code', value: 'alarmCode' },
-          { text: 'Alarm Text', value: 'alarmText' },
-          { text: 'Vehicle ID', value: 'vehicleId' },
-          { text: 'Created Time', value: 'createTime' },
-          { text: 'Alarm ID', value: 'alarmId' },
-          { text: 'TransportCommand ID', value: 'transportCommandId' },
-          { text: 'Near AGV', value: 'NEARAGV' },
-          { text: 'Is Cross', value: 'ISCROSS' }
+          { text: 'Type', value: 'type' },
+          { text: 'X Position', value: 'xPos' },
+          { text: 'Y Position', value: 'yPos' },
+          { text: 'Z Position', value: 'zPos' }
         ],
         items: []
       }
     },
     created () {
-      this.getCurrentAlarm()
+      this.getNode()
     },
     methods: {
-      getCurrentAlarm () {
-        const url = 'http://localhost:3000/api/current-alarm'
+      getNode () {
+        const url = 'http://localhost:3000/api/node'
         axios.get(url
         ).then((res) => {
           this.items = res.data

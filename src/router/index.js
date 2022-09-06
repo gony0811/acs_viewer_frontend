@@ -24,6 +24,8 @@ const router = new Router({
 
       route('CurrentAlarm', null, 'alarm/current-alarm'),
       route('AlarmSpec', null, 'alarm/alarm-spec'),
+
+      route('Node', null, 'resources/node'),
       // Pages
       route('UserProfile', null, 'components/profile'),
 

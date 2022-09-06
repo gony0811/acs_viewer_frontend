@@ -89,6 +89,7 @@
             <v-data-table
               :headers="headers"
               :items="items"
+              :items-per-page="10"
             />
           </v-card-text>
         </material-card>
