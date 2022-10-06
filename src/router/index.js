@@ -28,7 +28,7 @@ const router = new Router({
       route('Node', null, 'resources/node'),
       // Pages
       route('UserProfile', null, 'components/profile'),
-
+      route('Viewer', null, 'viewer'),
       // Components
       route('Notifications', null, 'components/notifications'),
       route('Icons', null, 'components/icons'),

@@ -13,6 +13,11 @@ const state = {
       to: '/'
     },
     {
+      title: 'Layout Viewer',
+      icon: 'mdi-devices',
+      to: '/viewer'
+    },
+    {
       title: 'Alarm',
       icon: 'mdi-alert-outline',
       items: [
@@ -41,6 +46,11 @@ const state = {
           title: 'Link',
           icon: 'mdi-vector-line',
           to: '/resources/link'
+        },
+        {
+          title: 'Icons',
+          icon: 'mdi-chart-bubble',
+          to: '/components/icons/'
         }
       ]
     }
@@ -61,11 +71,7 @@ const state = {
       icon: 'mdi-format-font',
       to: '/components/typography/',
     },
-    {
-      title: 'Icons',
-      icon: 'mdi-chart-bubble',
-      to: '/components/icons/',
-    },
+
     {
       title: 'Google Maps',
       icon: 'mdi-map-marker',

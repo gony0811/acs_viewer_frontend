@@ -19,7 +19,7 @@
       />
     </material-card>
 
-    <div class="py-3"/>
+    <div class="py-3" />
   </v-container>
 </template>
 <script>
