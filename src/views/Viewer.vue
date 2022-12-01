@@ -7,6 +7,7 @@
       @click="markerClick"
     >
       <dx-layer :data-source="nodes" />
+      <dx-layer :data-source="links" />
       <dx-tooltip
         :enabled="true"
         :customize-tooltip="customizeTooltip"
@@ -40,15 +41,33 @@
     },
     data () {
       return {
-        nodes: [],
-        bounds: [-360, 360, 360, -360]
+        nodes: '',
+        links: '',
+        bounds: [-500, 500, 500, -500]
       }
     },
-    mounted() {
+
+    mounted () {
+      this.resourceLoadLinks()
       this.resourceLoadNodes()
+
     },
+
     methods: {
-      resourceLoadNodes() {
+      resourceLoadLinks () {
+        var vectorMap = this.$refs.vectorMap.instance
+        vectorMap.showLoadingIndicator()
+        const url = 'http://localhost:3000/api/cache-link'
+        axios.get(url
+        ).then((res) => {
+          this.links = res.data
+          vectorMap.hideLoadingIndicator()
+        })
+          .catch((error) => {
+            alert(error)
+          })
+      },
+      resourceLoadNodes () {
         var vectorMap = this.$refs.vectorMap.instance
         vectorMap.showLoadingIndicator()
         const url = 'http://localhost:3000/api/cache-node'
@@ -82,7 +101,7 @@
 </script>
 <style>
 #vector-map {
-  height: 740px;
+  height: 1000px;
 }
 
 #reset {
